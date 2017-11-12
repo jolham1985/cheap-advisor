@@ -1,0 +1,35 @@
+<h1>Welcome to Cheap Advsior</h1>
+<p> Find the best Restaurants nearby </p>
+<h2> The Time is <%= Time.now%></h2>
+
+Check out  <%= link_to "all our shops" , shops_path %>
+
+Give us <%= link_to "feedback" , feedback_path %>
+
+
+<p> What Do You Want To Eat ? </p>
+<form action="/shops" method="get">
+  <input type="text" name="food_type" placeholder="what kind of food">
+  <input type="submit">
+</form>
+
+<p>Lets add a Restaurant</p>
+<form action="/shops" method="post">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <input type="text" name="name">
+  <input type="text" name="address">
+  <input type="text" name="catagory">
+  <input type="submit">
+</form>
+
+<ul>
+
+  <% @catagories.each do |catagory| %>
+
+  <li>
+   <%= catagory %>
+  </li>
+
+  <%end%>
+
+</ul>

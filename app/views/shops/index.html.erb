@@ -1,0 +1,11 @@
+<h1>Shops</h1>
+
+<h2>We have <%= @shops.count%> shops</h2>
+
+<ul>
+<% @shops.each do |shop| %>
+<li>
+  <%= shop [:name]%> , <%= shop [:address]%> , <%= shop [:catagory]%>
+</li>
+<%end%>
+</ul>
